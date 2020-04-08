@@ -16,16 +16,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='coupon',
             name='campaign',
-            field=models.ForeignKey(blank=True, null=True, related_name='coupons', to='coupons.Campaign', verbose_name='Campaign', on_delete=django.db.models.deletion.CASCADE),
+            field=models.ForeignKey(blank=True, null=True, related_name='coupons', to='coupons.Campaign', verbose_name='Campaign', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='couponuser',
             name='coupon',
-            field=models.ForeignKey(related_name='users', to='coupons.Coupon', on_delete=django.db.models.deletion.CASCADE),
+            field=models.ForeignKey(related_name='users', to='coupons.Coupon', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='couponuser',
             name='user',
-            field=models.ForeignKey(blank=True, null=True, to=settings.AUTH_USER_MODEL, verbose_name='User', on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, to=settings.AUTH_USER_MODEL, verbose_name='User', on_delete=models.SET_NULL),
         ),
     ]
